@@ -10,8 +10,7 @@ function RoutesApp(){
             <Routes>
                 <Route path="/" element={<Login />} />
                 <Route path="/cadastro" element={<Cadastro />} />
-                <Route path="/pag-principal-coordenacao" element={<PagPrincipal />} />
-                {/* <Route path="/pag-principal-coordenacao" element={<RotaProtegida><PagPrincipal /></RotaProtegida>} /> */}
+                <Route path="/pag-principal-coordenacao" element={<RotaProtegida><PagPrincipal /></RotaProtegida>} /> 
             </Routes>
         </BrowserRouter>
     )

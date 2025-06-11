@@ -10,6 +10,7 @@ function Cadastro(){
         const [email, setEmail] = useState("");
         const [cpf, setCpf] = useState("");
         const [senha, setSenha] = useState("");
+        const [id, setId] = useState("");
         const [showPassword, setShowPassword] = useState(false);
         const navigate = useNavigate();
         const urlC = "http://localhost:8080/escola/coordenacao";
@@ -48,15 +49,15 @@ function Cadastro(){
                 setSelecionado(event.target.name); 
             };   
 
-        const cadastrar = (url) => async (e) => {
+        const cadastrar = (url, usuarioEncontrado) => async (e) => {
             e.preventDefault();
+            url = `${url}/${usuarioEncontrado.id}/credenciais`;
 
             try {
                 const response = await fetch(url, {
-                    method: "POST",
+                    method: "PUT",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        cpf,
                         email,
                         senha 
                     })
@@ -74,44 +75,44 @@ function Cadastro(){
         };
 
     
-            const verificar= (e) =>{
+            const verificar= async (e) =>{
                 console.log(email);
                 let usuarioEncontrado = null;
                 e.preventDefault();
     
-                if(selecionado.equals("optionP")){
+                if(selecionado === "optionP"){
                     for (let i = 0; i < professores.length; i++) {
-                        if (professores[i] && professores[i].email && professores[i].cpf) {
-                            if (professores[i].email === email && professores[i].cpf === cpf) {
+                        if (professores[i] && professores[i].cpf) {
+                            if (professores[i].cpf === cpf) {
                                 usuarioEncontrado = professores[i];
                                 console.log("Usuario encontrado:", usuarioEncontrado);
-                                cadastrar(urlP);
+                                await cadastrar(urlP, usuarioEncontrado)(e);
                                 break;
                             }
                         } else {
                             console.error("Usuário sem estrutura esperada:", professores[i]);
                         }
                     }
-                }else if(selecionado.equals("optionC")){
+                }else if(selecionado ==="optionC"){
                     for (let i = 0; i < coordenacao.length; i++) {
-                        if (coordenacao[i] && coordenacao[i].email && coordenacao[i].cpf) {
-                            if (coordenacao[i].email === email && coordenacao[i].cpf === cpf) {
+                        if (coordenacao[i] && coordenacao[i].cpf) {
+                            if (coordenacao[i].cpf === cpf) {
                                 usuarioEncontrado = coordenacao[i];
                                 console.log("Usuario encontrado:", usuarioEncontrado);
-                                cadastrar(urlC);
+                                await cadastrar(urlC, usuarioEncontrado)(e);
                                 break;
                             }
                         } else {
                             console.error("Usuário sem estrutura esperada:", coordenacao[i]);
                         }
                     }
-                }else if(selecionado.equals("optionA")){
+                }else if(selecionado === "optionA"){
                     for (let i = 0; i < alunos.length; i++) {
-                        if (alunos[i] && alunos[i].email && alunos[i].cpf) {
-                            if (alunos[i].email === email && alunos[i].cpf === cpf) {
+                        if (alunos[i] && alunos[i].cpf) {
+                            if (alunos[i].cpf === cpf) {
                                 usuarioEncontrado = alunos[i];
                                 console.log("Usuario encontrado:", usuarioEncontrado);
-                                cadastrar(urlA);
+                                await cadastrar(urlA, usuarioEncontrado)(e);
                                 break;
                             }
                         } else {
@@ -138,7 +139,7 @@ function Cadastro(){
                           
                     </div>
                     <label className="labelLogin" htmlFor="cpf">CPF</label>
-                    <input className="inputsLogin" type="text" name="cpf" placeholder="000.000.000-00" value={cpf} nChange={(e) => setCpf(e.target.value)}  required></input>
+                    <input className="inputsLogin" type="text" name="cpf" placeholder="000.000.000-00" value={cpf} onChange={(e) => setCpf(e.target.value)}  required></input>
                     <label className='labelLogin' htmlFor="email">Email</label>
                     <div className='iconeDiv'>
                         <input className="inputsLogin" type="email" name="email" placeholder="seunoma@email.com" value={email} 
@@ -157,8 +158,8 @@ function Cadastro(){
                             onChange={(e) => setShowPassword(e.target.checked)} />
                         <label htmlFor="mostrarSenha">Mostrar a senha.</label>
                     </div>
-                </form>
                     <button className='botao' type="submit">Cadastrar</button>
+                </form>
 
                     
 

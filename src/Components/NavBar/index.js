@@ -12,9 +12,15 @@ function NavBar(){
         }
     }, []);
 
+    const logout = () => {
+        localStorage.removeItem("usuario"); 
+        alert("Logout realizado com sucesso!");
+        window.location.href = "/"; 
+    };
+
     return(
         <div className="nav">
-            <button className="logOut">sair</button>
+            <button onClick={logout} className="logOut">sair</button>
             <button className="icon">.</button>
             <p className="nomeTitulo">Luísa de Andrade Deschamps</p>
         </div>
