@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
+
+.main{
+    height: 100vh; 
+    width: 100%;
+    background: #3F5EFB;
+    background: radial-gradient(circle,rgba(63, 94, 251, 1) 0%, rgba(70, 210, 252, 1) 100%);
+    color: #4A4A4A;
+    padding-top: 5%;
+    font-family: "Open Sans", sans-serif;
+}
+
+.caixaLog{
+    width: 29%;
+    height: 95%;
+    background-color: #F9F9F9;
+    margin-left: 33%;
+    padding-top: 3%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 25px;
+}
+
+.voceE{
+     font-weight: 600;
+     padding-bottom: 5px;
+}
+
+.checkBoxes label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px; 
+}
+.checkBoxes {
+    display: flex;
+    flex-direction: row; 
+    gap: 35px; 
+}
+.checkBoxes input {
+    margin-right: 5px; 
+    width: 20px;
+    height: 20px;
+}
+
+.inputsLog{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+.iconeDiv{
+    width: 100%;
+    position: relative;
+}
+
+.inputsLogin{
+    height: 55px;
+    margin-bottom: 20px;
+    border: 1px solid #4A4A4A;
+    padding-left: 20px;
+    padding-right: 40px;
+    width: 100%;
+}
+
+.inputsLogin::-ms-reveal{
+    display : none ;
+}
+
+.inputIcon{
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    position: absolute;
+    right: 5px;
+    top: 25%;
+}
+
+.labelLogin{
+    font-weight: 600;
+}
+
+.mostrarSenha{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-bottom: 40px;
+}
+
+.mostrarSenha label{
+    font-weight: 400;
+}
+
+.mostrarSenha input{
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: 2px solid #4A4A4A;
+    margin-right: 5px;
+}
+
+.pPergunta{
+    font-size: 15px;
+    font-weight: 600;
+    padding-bottom: 40px;
+}
+
+.botao{
+    height: 55px;
+    border: none;
+    color: #F9F9F9;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #3F5EFB;
+}
+
+.botao:hover{
+    background-color: #526df8;
+}
+
+.linhaLogin{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    gap: 25px;
+    font-weight: 300;
+    padding-top: 20px;
+}
+
+.traco{
+    height: 1px;
+    width: 40%;
+    background-color: #4A4A4A;
+}
+
+.botaoCadastro{
+    height: 55px;
+    border: 1px solid #4A4A4A;
+    margin-top: 40px;
+    background-color: #F9F9F9;
+    color:#4A4A4A;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.botaoCadastro:hover{
+    background-color: #ede8e8;
+}

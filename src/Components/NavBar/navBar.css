@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
+
+.nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row-reverse;
+    height: 50px;
+    background-color: #3F5EFB;
+    font-family: "Open Sans", sans-serif;
+    align-items: center;
+    padding-right: 20px;
+}
+
+.nomeTitulo{
+    color: #fff;
+    font-size: 15px;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    margin-left: 5px;
+}
+
+.logOut{
+    width: 60px;
+    height: 20px;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #3F5EFB;
+    font-weight: bolder;
+    background-color: #fff;
+    border-radius: 25px;
+    border: none;
+}
+
+.logOut:hover, .icon:hover{
+    background-color: #e8e3e3;
+}
