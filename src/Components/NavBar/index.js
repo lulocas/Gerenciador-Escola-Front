@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import './navBar.css';
+import iconUsuario from "../../assets/avatar.png";
 
 function NavBar(){
     const [nome, setNome] = useState("");
@@ -21,7 +22,7 @@ function NavBar(){
     return(
         <div className="nav">
             <button onClick={logout} className="logOut">sair</button>
-            <button className="icon">.</button>
+            <button className="icon"><img src={iconUsuario} className="iconUsuario"/></button>
             <p className="nomeTitulo">Luísa de Andrade Deschamps</p>
         </div>
     );

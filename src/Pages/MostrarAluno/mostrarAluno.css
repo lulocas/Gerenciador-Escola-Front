@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
+
+h3{
+    color: #3F5EFB;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: "Open Sans", sans-serif;
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+.divTabela{
+    margin-left: 20%;
+    margin-top: 30px;
+}
+
+.tabelaAlunos{
+    border: 3px solid #3F5EFB;
+    border-radius: 15px;
+}
+
+th{
+    font-size: 20px;
+    padding-right: 80px;
+    color: #3F5EFB;
+}
