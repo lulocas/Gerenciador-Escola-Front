@@ -52,11 +52,11 @@ h3{
     margin-top: 30px;
 }
 
-table, th, td {
+.tabelaAlunos th, td {
   font-family: "Open Sans", sans-serif;
 }
 
-table{
+.tabelaAlunos{
     width: 80%;
 }
 
@@ -73,10 +73,7 @@ tbody{
     text-align: center;
 }
 
-.aLinkAl{
-    cursor: pointer;
-}
-tr:hover{
+.tabelaAlunos tr:hover{
     background-color: #5167d6;
     color: #fff;
     cursor: pointer;

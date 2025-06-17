@@ -12,10 +12,10 @@ function InfoAlunosC(){
     useEffect(() => {
         async function buscarAluno() {
             const response = await fetch(`http://localhost:8080/escola/alunos/${id}`);
-            const responseNotas = await fetch('http://localhost:8080/escola/notas/${id}');
+            const responseNotas = await fetch(`http://localhost:8080/escola/notas/${id}`);
             const jsonNotas = await responseNotas.json();
             const json = await response.json();
-            setNotas(jsonNotas);
+            setNotas(Array.isArray(jsonNotas) ? jsonNotas : []);
             setAluno(json); 
         }
         
@@ -75,42 +75,42 @@ function InfoAlunosC(){
 
                         <div className="divsform">
                             <label>Telefone:</label>
-                            <input type="text" name="telefone" value={aluno.telefone} onChange={handleChange} />
+                            <input className="telefoneInput" type="text" name="telefone" value={aluno.telefone} onChange={handleChange} />
                         </div>
 
                         <div className="divsform">
                             <label>Ano Escolar:</label>
-                            <input type="number" name="ano" value={aluno.ano} onChange={handleChange} />
+                            <input className="inputMenor" type="number" name="ano" value={aluno.ano} onChange={handleChange} min="1" max="5" />
                         </div>
 
                         <div className="divsform">
                             <label>Número de faltas:</label>
-                            <input type="email" name="faltas" value={aluno.numFaltas} onChange={handleChange} />
+                            <input className="inputMenor" type="email" name="faltas" value={aluno.numFaltas} onChange={handleChange} />
                         </div>
 
                         <button className="btnSalvarInfo" type="button" onClick={salvarEdicao}>Salvar</button>
                     </div>
                 </div>
                 <div className="tabelaNotasC">
-                    <table className="tabelaAlunos">
-                    <thead>
-                        <tr>
-                            <th>Materia</th>
-                            <th>Nota 1</th>
-                            <th>Nota 2</th>
-                            <th>Nota 3</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {notas.map((nota) => (
-                                <tr key={nota.id}>
-                                    <td>{nota.materia}</td>
-                                    <td>{nota.nota1}</td>
-                                    <td>{nota.nota2}</td>
-                                    <td>{nota.nota3}</td>
-                                </tr>
-                        ))}
-                    </tbody>
+                    <table className="tabelaAluno">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Nota 1</th>
+                                <th>Nota 2</th>
+                                <th>Nota 3</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {notas.map((nota) => (
+                                    <tr key={nota.id}>
+                                        <td>{nota.materia}</td>
+                                        <td>{nota.nota1}</td>
+                                        <td>{nota.nota2}</td>
+                                        <td>{nota.nota3}</td>
+                                    </tr>
+                            ))}
+                        </tbody>
                 </table>
                 </div>
             </div>

@@ -19,20 +19,31 @@ h2{
 .formAlunoInfo{
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 25px;
 }
 
 .divsform{
     display: flex;
     flex-direction: row;
     gap: 5px;
+    align-items: center;
 }
 
 .divsform label{
     color: #3F5EFB;
+    font-size: 20px;
+}
+
+.divsform .telefoneInput{
+    width: 350px;
+}
+
+.divsform .inputMenor{
+    width: 40px;
 }
 
 .divsform input{
+    width: 400px;
     height: 30px;
     border: none;
     background-color: rgb(63, 94, 251, 0.5);
@@ -42,6 +53,7 @@ h2{
     padding-left: 5px;
     border-radius: 10px;
 }
+
 
 .btnSalvarInfo{
     background-color: #3F5EFB;
@@ -55,4 +67,13 @@ h2{
 
 .btnSalvarInfo:hover{
     background-color: #536be3;
+}
+
+.tabelaNotasC{
+    margin-left: 18%;
+    margin-top: 70px;
+}
+
+.tabelaAluno{
+    width: 80%;
 }
