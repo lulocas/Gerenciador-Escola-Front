@@ -1,8 +1,8 @@
 import NavBar from "../../Components/NavBar";
 import './pagIni.css';
 import turma from "../../assets/escola.png";
-import alunoIcon from "../../assets/aluno.png";
-import funcionario from "../../assets/treinamento.png";
+import alunoIcon from "../../assets/aluna.png";
+import funcionario from "../../assets/oficina.png";
 import { useNavigate } from "react-router-dom";
 
 function PagPrincipal(){

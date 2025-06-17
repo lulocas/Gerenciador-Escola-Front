@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Varela+Round&display=swap');
+
+.principInfo{
+    font-family: "Open Sans", sans-serif;
+}
+
+h2{
+    font-weight: lighter;
+    color: rgb(63, 94, 251, 0.9);
+    margin-left: 18%;
+}
+
+.infosAlunoC{
+    margin-left: 18%;
+    width: 65%;
+    margin-top: 20px;
+}
+
+.formAlunoInfo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.divsform{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.divsform label{
+    color: #3F5EFB;
+}
+
+.divsform input{
+    height: 30px;
+    border: none;
+    background-color: rgb(63, 94, 251, 0.5);
+    color: #3F5EFB;
+    font-weight: bold;
+    font-size: 15px;
+    padding-left: 5px;
+    border-radius: 10px;
+}
+
+.btnSalvarInfo{
+    background-color: #3F5EFB;
+    color: #fff;
+    font-weight: bold;
+    width: 65px;
+    font-size: 15px;
+    border: none;
+    border-radius: 10px;
+}
+
+.btnSalvarInfo:hover{
+    background-color: #536be3;
+}
