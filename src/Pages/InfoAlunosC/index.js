@@ -42,12 +42,32 @@ function InfoAlunosC(){
         }
     };
 
+    const deletarAluno = async () => {
+    const url = `http://localhost:8080/escola/alunos/${id}`;
+
+    try {
+        const response = await fetch(url, {
+            method: "DELETE",
+        });
+
+        if (response.ok) {
+            alert("Aluno deletado com sucesso!");
+            navigate("/mostrar-aluno");
+        } else {
+            alert("Erro ao deletar aluno.");
+        }
+    } catch (error) {
+        alert("Erro ao conectar com o servidor.");
+    }
+};
+
     if (!aluno) return <p>Carregando...</p>;
 
     return(
         <>
             <NavBar></NavBar>
             <div className="principInfo">
+                <button className="botaoVoltar" onClick={() => navigate(`/mostrar-aluno`)}>Voltar</button>
                 <h3>{aluno.nome}</h3>
                 <h2>Matrícula: {aluno.matricula}</h2>
                 <div className="infosAlunoC">
@@ -70,7 +90,7 @@ function InfoAlunosC(){
 
                         <div className="divsform">
                             <label>Senha:</label>
-                            <input type="email" name="senha" value={aluno.senha} onChange={handleChange} />
+                            <input type="text" name="senha" value={aluno.senha} onChange={handleChange} />
                         </div>
 
                         <div className="divsform">
@@ -85,10 +105,11 @@ function InfoAlunosC(){
 
                         <div className="divsform">
                             <label>Número de faltas:</label>
-                            <input className="inputMenor" type="email" name="faltas" value={aluno.numFaltas} onChange={handleChange} />
+                            <input className="inputMenor" type="number" name="faltas" value={aluno.numFaltas} onChange={handleChange} />
                         </div>
 
                         <button className="btnSalvarInfo" type="button" onClick={salvarEdicao}>Salvar</button>
+                        <button className="btnDeletarA" type="button" onClick={deletarAluno}>Deletar</button>
                     </div>
                 </div>
                 <div className="tabelaNotasC">

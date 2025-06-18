@@ -1,0 +1,13 @@
+.formAddA{
+    margin-left: 19%;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 70%;
+}
+
+.divsform input::placeholder{
+    color: rgba(43, 76, 242, 0.5);
+}

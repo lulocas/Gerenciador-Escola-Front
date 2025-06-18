@@ -1,0 +1,23 @@
+.botoesCTurma{
+    margin-top: 30px;
+    margin-left: 18%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 60%;
+    gap: 30px;
+}
+
+.botoesDirecionamentoT{
+    width: 280px;
+    height: 220px;
+    border-radius: 15px;
+    border: none;
+    background-color: #3F5EFB;
+    color: #fff;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.botoesDirecionamentoT:hover{
+    background-color: #556ff2;
+}

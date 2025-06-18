@@ -12,7 +12,7 @@ function PagPrincipal(){
             <NavBar></NavBar>
             <div className="botoesC">
                 <button className="botoesDirecionamento" onClick={() => navigate("/mostrar-aluno")}><img src={alunoIcon} className="iconBtn"/> Alunos</button>
-                <button className="botoesDirecionamento"><img src={turma} className="iconBtn"/> Turmas</button>
+                <button className="botoesDirecionamento" onClick={() => navigate("/turmas-coordenacao")}><img src={turma} className="iconBtn"/> Turmas</button>
                 <button className="botoesDirecionamento"><img src={funcionario} className="iconBtn"/> Funcionários</button>
             </div>
         </>

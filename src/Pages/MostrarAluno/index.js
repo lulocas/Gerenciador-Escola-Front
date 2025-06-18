@@ -59,6 +59,7 @@ function MostrarAluno(){
     return(
         <>
              <NavBar></NavBar>
+            <button className="botaoVoltar" onClick={() => navigate(`/pag-principal-coordenacao`)}>Voltar</button>
             <h3>Lista de Alunos:</h3>
             <div className="barraNav">
                 <input placeholder="Digite o nome do aluno..." type="text" name="nome" value={nome} 
@@ -71,6 +72,7 @@ function MostrarAluno(){
                 <button className={`btnOrd ${botaoAtivo === "3º ano" ? "ativo" : ""}`} onClick={() => filtrarPorAno("3º ano")}>3º ano</button>
                 <button className={`btnOrd ${botaoAtivo === "4º ano" ? "ativo" : ""}`} onClick={() => filtrarPorAno("4º ano")}>4º ano</button>
                 <button className={`btnOrd ${botaoAtivo === "5º ano" ? "ativo" : ""}`} onClick={() => filtrarPorAno("5º ano")}>5º ano</button>
+                <button className="botaoCriarAluno" onClick={() => navigate(`/mostrar-aluno/adicionar-aluno`)}>Add</button>
             </div>
             <div className="divTabela">
                 <table className="tabelaAlunos">

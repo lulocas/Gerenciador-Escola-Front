@@ -10,7 +10,6 @@ function Cadastro(){
         const [email, setEmail] = useState("");
         const [cpf, setCpf] = useState("");
         const [senha, setSenha] = useState("");
-        const [id, setId] = useState("");
         const [showPassword, setShowPassword] = useState(false);
         const navigate = useNavigate();
         const urlC = "http://localhost:8080/escola/coordenacao";
