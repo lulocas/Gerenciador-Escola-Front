@@ -87,6 +87,7 @@ function Login(){
                         if (alunos[i].email === email && alunos[i].senha === password) {
                             usuarioEncontrado = alunos[i];
                             console.log("Usuario encontrado:", usuarioEncontrado);
+                            setPath("/pag-principal-aluno");
                             break;
                         }
                     } else {
