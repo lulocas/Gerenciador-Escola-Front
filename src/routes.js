@@ -12,6 +12,8 @@ import FuncionariosC from './Pages/FuncionariosC';
 import AdicionarFuncionario from './Pages/AdicionarFuncionario';
 import EditarProfessor from './Pages/EditarProfessor';
 import AdicionarCoordenacao from './Pages/AdicionarCoordenacao';
+import ProfessorInicial from './Pages/ProfessorInicial';
+import AdicionarNotas from './Pages/AdicionarNotas';
 
 function RoutesApp(){
     return(
@@ -20,6 +22,8 @@ function RoutesApp(){
                 <Route path="/" element={<Login />} />
                 <Route path="/cadastro" element={<Cadastro />} />
                 <Route path="/pag-principal-coordenacao" element={<RotaProtegida><PagPrincipal /></RotaProtegida>} />
+                <Route path="/pag-principal-professor" element={<RotaProtegida><ProfessorInicial /></RotaProtegida>} />
+                <Route path="/pag-principal-professor/adicionar-notas/:id" element={<RotaProtegida><AdicionarNotas /></RotaProtegida>} />
                 <Route path="/mostrar-aluno" element={<RotaProtegida><MostrarAluno /></RotaProtegida>} /> 
                 <Route path="/mostrar-aluno/info-alunos-c/:id" element={<RotaProtegida><InfoAlunosC /></RotaProtegida>} />
                 <Route path="/mostrar-aluno/adicionar-aluno" element={<RotaProtegida><AdicionarAluno /></RotaProtegida>} />

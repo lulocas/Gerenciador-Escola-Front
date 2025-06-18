@@ -23,7 +23,7 @@ function NavBar(){
         <div className="nav">
             <button onClick={logout} className="logOut">sair</button>
             <button className="icon"><img src={iconUsuario} className="iconUsuario"/></button>
-            <p className="nomeTitulo">Luísa de Andrade Deschamps</p>
+            <p className="nomeTitulo">{nome}</p>
         </div>
     );
 }
