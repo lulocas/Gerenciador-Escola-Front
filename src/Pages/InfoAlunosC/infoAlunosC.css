@@ -4,6 +4,15 @@
     font-family: "Open Sans", sans-serif;
 }
 
+.carregar{
+    font-family: "Open Sans", sans-serif;
+    color: #3F5EFB;
+    font-weight: bolder;
+    text-align: center;
+    margin-top: 20%;
+    font-size: 40px;
+}
+
 h2{
     font-weight: lighter;
     color: rgb(63, 94, 251, 0.9);

@@ -61,7 +61,7 @@ function InfoAlunosC(){
     }
 };
 
-    if (!aluno) return <p>Carregando...</p>;
+    if (!aluno) return (<><NavBar></NavBar><p className="carregar">Carregando...</p></>);
 
     return(
         <>
@@ -101,6 +101,11 @@ function InfoAlunosC(){
                         <div className="divsform">
                             <label>Ano Escolar:</label>
                             <input className="inputMenor" type="number" name="ano" value={aluno.ano} onChange={handleChange} min="1" max="5" />
+                        </div>
+
+                        <div className="divsform">
+                            <label>Ano Escolar:</label>
+                            <input className="inputMenor" type="number" name="turma" value={aluno.turma} onChange={handleChange} min="1" max="5" />
                         </div>
 
                         <div className="divsform">

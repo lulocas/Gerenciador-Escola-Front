@@ -39,7 +39,7 @@ function MostrarTurmaC(){
         buscarDados();
     }, [turma]);
 
-    if (!alunos) return <p>Nenhum aluno encontrado para essa turma.</p>;
+    if (!alunos) return (<><NavBar></NavBar><p className="carregar">Carregando...</p></>);
 
     return(
         <>
@@ -58,12 +58,18 @@ function MostrarTurmaC(){
                             </tr>
                         </thead>
                         <tbody>
-                            <tr key={professor.id} onClick={() => navigate(`/mostrar-aluno/info-alunos-c/${professor.id}`)} className="linha-click">
-                                <td>{professor.nome}</td>
-                                <td>{professor.cpf}</td>
-                                <td>{professor.email}</td>
-                                <td>{professor.telefone}</td>
-                            </tr>
+                            {professor ? (
+                                <tr key={professor.id}  className="linha-click">
+                                    <td>{professor.nome}</td>
+                                    <td>{professor.cpf}</td>
+                                    <td>{professor.email}</td>
+                                    <td>{professor.telefone}</td>
+                                </tr>
+                            ) : (
+                                <tr>
+                                    <td colSpan="4">Nenhum professor encontrado para essa turma.</td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
@@ -80,14 +86,20 @@ function MostrarTurmaC(){
                             </tr>
                         </thead>
                         <tbody>
-                            {alunos.map((aluno) => (
-                                    <tr key={aluno.id} onClick={() => navigate(`/mostrar-aluno/info-alunos-c/${aluno.id}`)} className="linha-click">
+                            {alunos && alunos.length > 0 ? (
+                                alunos.map((aluno) => (
+                                    <tr key={aluno.id} className="linha-click">
                                         <td>{aluno.nome}</td>
                                         <td>{aluno.cpf}</td>
                                         <td>{aluno.email}</td>
                                         <td>{aluno.telefone}</td>
                                     </tr>
-                            ))}
+                                ))
+                            ) : (
+                                <tr>
+                                    <td colSpan="4">Nenhum aluno encontrado para essa turma.</td>
+                                </tr>
+                            )}
                         </tbody>
                     </table>
                 </div>
